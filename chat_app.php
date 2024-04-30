@@ -273,7 +273,7 @@
                 <div class="user-info">
                     <h3>User 1</h3>
                     <span>Status: Active</span>
-                </div>
+                </div
             </div>
             <div class="conversation">
                 <img class="avatar" src="user2.jpg" alt="User Avatar">
