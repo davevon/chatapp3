@@ -1,0 +1,180 @@
+/* Reset default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7; /* Light gray background */
+    color: #333; /* Dark text color */
+    margin: 0; /* Remove default body margin */
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack child elements vertically */
+}
+
+/* Header styles */
+header {
+    background-color: #fff;
+    padding: 10px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icons i {
+    font-size: 20px;
+    margin-left: 20px;
+    color: #888;
+    transition: color 0.3s ease; /* Add transition for color change */
+    cursor: pointer; /* Add pointer cursor */
+}
+
+.icons i:hover {
+    color: #333; /* Darken icon color on hover */
+}
+
+/* Chat list styles */
+.chat-list {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent items from wrapping */
+    padding: 20px;
+}
+
+.chat-item {
+    display: inline-block;
+    margin-right: 20px; /* Adjust spacing between chat items */
+    vertical-align: top; /* Align chat items vertically */
+}
+
+.chat-item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat-details {
+    flex-grow: 1;
+}
+
+.contact-name {
+    font-weight: bold;
+}
+
+.last-message {
+    color: #888; /* Lighter text color for last message */
+}
+
+.timestamp {
+    color: #888;
+    font-size: 12px;
+}
+
+/* Search bar styles */
+.search-bar {
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Message area styles */
+.message-area {
+    flex-grow: 1; /* Allow the message area to grow and take remaining vertical space */
+    padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Message styles */
+.message {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.message img {
+    width: 40px; /* Adjust image size */
+    height: 40px; /* Adjust image size */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message-content {
+    background-color: #f0f0f0; /* Light gray background for messages */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message-text {
+    color: #333; /* Dark text color for messages */
+}
+
+.message.sent {
+    flex-direction: row-reverse; /* Reverse direction for sent messages */
+}
+
+/* Message input styles */
+.message-input {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space evenly */
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Add shadow to bottom */
+}
+
+.message-input textarea {
+    flex-grow: 1;
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    resize: none; /* Disable textarea resizing */
+    height: 40px; /* Set initial height */
+}
+
+.message-input button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: #007bff; /* Blue send button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Footer styles for bottom navigation */
+footer {
+    background-color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Add shadow to top */
+}
+
+footer i {
+    font-size: 24px;
+    color: #888; /* Light gray icon color */
+    transition: color 0.3s ease; /* Add transition for color change */
+    cursor: pointer; /* Add pointer cursor */
+}
+
+footer i:hover {
+    color: #333; /* Darken icon color on hover */
+}
