@@ -18,7 +18,10 @@ body {
 header {
     background-color: #fff;
     padding: 10px 20px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 202a2b3 (ddg)
     display: flex;
     justify-content: space-between;
     align-items: center;
