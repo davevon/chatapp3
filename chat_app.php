@@ -52,6 +52,4 @@
         <button><i class="fas fa-paper-plane"></i></button> <!-- Send icon -->
     </div>
 
- <?php include 'header.php'; ?>
-</body>
-</html>
+ <?php include 'footer.php' ?>

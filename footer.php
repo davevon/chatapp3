@@ -1,5 +1,5 @@
-    <!-- Footer -->
-    <footer>
+   <!-- Footer -->
+   <footer>
         <i class="fas fa-comment"></i> <!-- Chats icon -->
         <i class="fas fa-user-friends"></i> <!-- Contacts icon -->
         <i class="fas fa-users"></i> <!-- Groups icon -->
