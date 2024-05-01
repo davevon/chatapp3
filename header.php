@@ -15,9 +15,8 @@
             <i class="fas fa-cog"></i> <!-- Settings icon -->
             <i class="fas fa-user-friends"></i> <!-- Contacts icon -->
             <i class="fas fa-bell"></i> <!-- Notifications icon -->
-<<<<<<< HEAD
+
 </div>
-=======
+
         </div>
->>>>>>> 202a2b3 (ddg)
     </header>
