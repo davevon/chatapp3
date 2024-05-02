@@ -178,3 +178,67 @@ footer i:hover {
     color: #333; /* Darken icon color on hover */
 }
 
+
+/* Profile page styles */
+/* Profile Form Styles */
+
+/* Form container */
+
+/* Form title */
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.profile-form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title */
+.profile-form-container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form labels */
+.profile-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Form inputs */
+.profile-form-container input[type="text"],
+.profile-form-container select,
+.profile-form-container input[type="date"],
+.profile-form-container input[type="file"],
+.profile-form-container button[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Avatar input */
+.profile-form-container input[type="file"] {
+    cursor: pointer; /* Change cursor to pointer for file input */
+}
+
+/* Submit button */
+.profile-form-container button[type="submit"] {
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-form-container button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

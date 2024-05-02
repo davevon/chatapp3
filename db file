@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2024 at 11:34 PM
+-- Generation Time: May 02, 2024 at 11:08 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -60,6 +60,13 @@ CREATE TABLE `friends` (
   `Status` enum('pending','accepted') DEFAULT 'pending',
   `CreatedAt` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `friends`
+--
+
+INSERT INTO `friends` (`FriendshipID`, `UserID1`, `UserID2`, `Status`, `CreatedAt`) VALUES
+(1, 1, 2, 'pending', '2024-05-02 20:58:58');
 
 -- --------------------------------------------------------
 
@@ -151,16 +158,18 @@ CREATE TABLE `users` (
   `Avatar` varchar(255) DEFAULT NULL,
   `Password` varchar(255) NOT NULL,
   `Email` varchar(100) NOT NULL,
-  `CreatedAt` timestamp NOT NULL DEFAULT current_timestamp()
+  `Bio` text DEFAULT NULL,
+  `CreatedAt` timestamp NOT NULL DEFAULT current_timestamp(),
+  `is_online` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UserID`, `Username`, `LastName`, `FirstName`, `MiddleName`, `Gender`, `ContactNumber`, `DateOfBirth`, `Avatar`, `Password`, `Email`, `CreatedAt`) VALUES
-(1, 'david', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$cvVDv.VyUBM2HPJWWN8SLO7emhOhah5WushXKk/raDUxOhbuwuXke', 'daviancraddock@gmail.com', '2024-04-30 17:34:35'),
-(2, 'avian', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$oCfGE8hHPznXErVhsOJV8.p3dqiWcjRcYiwq3W8GTG6L.HFtF9uyO', 'aiancraddock@gmail.com', '2024-05-01 19:48:07');
+INSERT INTO `users` (`UserID`, `Username`, `LastName`, `FirstName`, `MiddleName`, `Gender`, `ContactNumber`, `DateOfBirth`, `Avatar`, `Password`, `Email`, `Bio`, `CreatedAt`, `is_online`) VALUES
+(1, 'david', 'Davevon', 'craddock', 'clark', 'Male', '8762776950', '2012-11-01', 'avatars/1_8380014.jpg', '$2y$10$cvVDv.VyUBM2HPJWWN8SLO7emhOhah5WushXKk/raDUxOhbuwuXke', 'daviancraddock@gmail.com', 'hii', '2024-04-30 17:34:35', 1),
+(2, 'avian', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$oCfGE8hHPznXErVhsOJV8.p3dqiWcjRcYiwq3W8GTG6L.HFtF9uyO', 'aiancraddock@gmail.com', NULL, '2024-05-01 19:48:07', 0);
 
 --
 -- Indexes for dumped tables
@@ -257,7 +266,7 @@ ALTER TABLE `deletedmessages`
 -- AUTO_INCREMENT for table `friends`
 --
 ALTER TABLE `friends`
-  MODIFY `FriendshipID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `FriendshipID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `messageattachments`

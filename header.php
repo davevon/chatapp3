@@ -6,17 +6,17 @@ ini_set('display_errors', 1);
 session_start();
 
 // Check if the user is logged in
-$userIsLoggedIn = isset($_SESSION['id']);
+$userIsLoggedIn = isset($_SESSION['UserID']);
 
 
 // Get user information if logged in
 $user = null;
-if ($userIsLoggedIn && isset($_SESSION['id'])) {
-    // Retrieve user information from the session or database
-    // Example: $user = getUserInfo($_SESSION['id']);
-    // Replace getUserInfo with your function to retrieve user info
-    // For now, let's assume user information is stored in the session
-    $user = $_SESSION;
+if ($userIsLoggedIn && isset($_SESSION['UserID'])) {
+    $userID = $_SESSION['UserID'];
+    // Retrieve user information from the database
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE UserID = ?");
+    $stmt->execute([$userID]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 }
 ?>
 
@@ -27,15 +27,14 @@ if ($userIsLoggedIn && isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 
-    
     <title>Bootstrap Example</title>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css"> <!-- External CSS file -->
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
@@ -46,8 +45,8 @@ if ($userIsLoggedIn && isset($_SESSION['id'])) {
         </div>
         <div class="user-info">
             <!-- Display logged-in user's information -->
-            <?php if ($user !== null && isset($user['firstname'])): ?>
-            <span>Welcome, <?php echo $user['firstname']; ?></span> <!-- Display username -->
+            <?php if ($user !== null && isset($user['Username'])): ?>
+            <span>Welcome, <?php echo $user['Username']; ?></span> <!-- Display username -->
             <?php else: ?>
             <span>Error: User information not available</span>
             <?php endif; ?>
